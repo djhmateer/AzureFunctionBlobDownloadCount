@@ -1,1 +1,1 @@
-# AzureFunctionBlobDownloadCount
+Source from article on [davemateer.com](https://davemateer.com/azure/2018/11/07/Azure-Functions-to-Count-Downloads-from-Blob-Storage.html)
