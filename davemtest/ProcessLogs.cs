@@ -19,6 +19,9 @@ namespace DaveMTest
         [FunctionName("ProcessLogs")]
         public static void Run([BlobTrigger("showlogs/{name}", Connection = BlobConnectionString)]Stream blobStream, string name, ILogger log)
         {
+            // https://cmatskas.com/copy-azure-blob-data-between-storage-accounts-using-functions/
+            // it could be worth seeing if CloudBlockBlob is a better way rather than Stream.
+
             log.LogInformation($"ProcessLogs:{name} \n Size: {blobStream.Length} Bytes");
             // get the blob as a string https://stackoverflow.com/a/17801826/26086
             blobStream.Seek(0, SeekOrigin.Begin);
